@@ -24,20 +24,29 @@ public class Case4 {
         int aLen = nums1.length;
         int bLen = nums2.length;
         int size = aLen + bLen;
+        //偶数长度时需要左右两个数确定中位数
         int right = 0;
         int left = 0;
+        //管理数组下表移动
         int aStart = 0;
         int bStart = 0;
         for (int i = 0; i <= size/2; i++) {
+            //默认情况下移动right，left跟随，这一步关键
             left = right;
+            //指针一边移动一边找出相对较大的数据，
+            // 取出标准：
+            // 1.数组未被用尽
+            // 2.另外一个数组被用尽  或者   当前数组小于另一数组所在指针值
             if(aStart<aLen && (bStart>=bLen || nums1[aStart]<=nums2[bStart])){
                 right = nums1[aStart++];
             }else {
                 right = nums2[bStart++];
             }
         }
+        //奇数取值
         if ((size %2) == 0){
             return (left + right) / 2.0;
+            //偶数取值
         }else {
             return right;
         }
