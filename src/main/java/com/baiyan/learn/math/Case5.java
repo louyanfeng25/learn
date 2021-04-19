@@ -3,6 +3,10 @@ package com.baiyan.learn.math;
 /**
  * 最长回文子串（5）
  *
+ * <href>
+ *     https://leetcode-cn.com/problems/longest-palindromic-substring/
+ * </href>
+ *
  * 思路：
  * p(i,j)=p(i+1,j-1)&&pi==pj
  * 中心扩展，单节点必为回文串，以单节点为中心往外进行扩散，两边节点值相等即为回文串。记录比较即可

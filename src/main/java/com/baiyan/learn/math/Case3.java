@@ -7,6 +7,10 @@ import java.util.Objects;
 /**
  * 无重复字符的最长子串(3)
  *
+ * <href>
+ *     https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+ * </href>
+ *
  * 输入: s = "abcabcbb"
  * 输出: 3
  * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
