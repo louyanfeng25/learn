@@ -5,6 +5,10 @@ import java.util.Objects;
 /**
  * 倒数K个节点
  *
+ * <href>
+ *     https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
+ * </href>
+ *
  * 思路：
  *
  * 倒数K个，就是正数L-K+1个数，那么使用双指针，node1指针跑到k-1个节点时，剩下步长为l-k+1个

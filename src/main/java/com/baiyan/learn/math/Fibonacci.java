@@ -3,6 +3,10 @@ package com.baiyan.learn.math;
 /**
  * 斐波那契数列
  *
+ * <href>
+ *     https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/
+ * </href>
+ *
  * @author baiyan
  * @time 2021/5/9 22:04
  */
@@ -10,7 +14,7 @@ public class Fibonacci {
 
     public static void main(String[] args) {
         //63245986
-        System.out.println(Fibonacci.fibonacci1(39));
+        System.out.println(Fibonacci.fibonacci1(9));
     }
 
     /**
@@ -46,7 +50,8 @@ public class Fibonacci {
         int second = 1;
         int third = 0;
         for(int i=3;i<=number;i++){
-            third = first + second;
+            //题目要求的取模
+            third = (first + second)%1000000007;
             first = second;
             second = third;
         }
