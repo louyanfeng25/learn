@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
+ * 数组重复数字
+ *
  * @author baiyan
  * @time 2021/6/7 16:46
  */
