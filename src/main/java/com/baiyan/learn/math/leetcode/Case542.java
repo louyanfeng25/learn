@@ -17,6 +17,11 @@ public class Case542 {
 
     static int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
+    /**
+     * 先进行0节点的数据标记，然后将0四周的节点标位1的举例，然后再广度遍历扩散
+     * @param matrix
+     * @return
+     */
     public int[][] updateMatrix(int[][] matrix) {
         int m = matrix.length, n = matrix[0].length;
         int[][] dist = new int[m][n];
