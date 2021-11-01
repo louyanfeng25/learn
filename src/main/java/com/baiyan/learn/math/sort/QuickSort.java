@@ -20,7 +20,7 @@ public class QuickSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    private static void quickSort(int[] arr, int left, int right) {
+    public static void quickSort(int[] arr, int left, int right) {
         int i, j, temp;
         if (left > right) {
             return;
