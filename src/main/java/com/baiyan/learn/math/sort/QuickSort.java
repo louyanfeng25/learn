@@ -51,8 +51,8 @@ public class QuickSort {
                 arr[j] = z;
             }
         }
-        //此时跳出了while循环，说明i=j，它们在同一位置
-        //此时，需要将temp和arr[i]进行交换
+        // 此时跳出了while循环，此时因为循环一定是从右边开始，因此i=j是，i对应的数据一定是小于等于temp的，
+        // 需要把最终跳出循环的i标志数据跟left标志数据交换位子
         arr[left] = arr[i];
         arr[i] = temp;
         //递归调用左半数组
