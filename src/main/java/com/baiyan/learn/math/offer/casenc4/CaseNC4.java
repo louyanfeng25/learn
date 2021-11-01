@@ -4,6 +4,9 @@ package com.baiyan.learn.math.offer.casenc4;
 /**
  * 判断链表中是否有环
  *
+ * 思路1：快慢指针
+ * 思路2：map记录走过的节点
+ *
  * <href>
  *     https://leetcode-cn.com/problems/lru-cache/
  * </href>
