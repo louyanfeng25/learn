@@ -25,7 +25,7 @@ public class CaseNc50 {
             for (int j = 1; j < k; j ++ ) {
                 temp = cur.next;
                 cur.next = temp.next;
-                temp.next = cur;
+                temp.next = pre.next;
                 pre.next = temp;
             }
             pre = cur;
@@ -38,14 +38,10 @@ public class CaseNc50 {
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
         ListNode c = new ListNode(3);
-        ListNode d = new ListNode(4);
-        ListNode e = new ListNode(5);
         a.next = b;
         b.next = c;
-        c.next = d;
-        d.next = e;
         CaseNc50 caseNc50 = new CaseNc50();
-        ListNode listNode = caseNc50.reverseKGroup(a, 2);
+        ListNode listNode = caseNc50.reverseKGroup(a, 3);
         System.out.println(listNode);
     }
 }
