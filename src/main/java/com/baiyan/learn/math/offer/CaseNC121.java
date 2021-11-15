@@ -1,8 +1,6 @@
 package com.baiyan.learn.math.offer;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * NC121 字符串的排列
@@ -16,52 +14,60 @@ import java.util.List;
  */
 public class CaseNC121 {
     public ArrayList<String> Permutation(String str) {
-        List<String> resultList = new ArrayList<>();
-        if(str.length() == 0){
-            return (ArrayList)resultList;
-        }
-        //递归的初始值为（str数组，空的list，初始下标0）
-        fun(str.toCharArray(),resultList,0);
-        Collections.sort(resultList);
-        return (ArrayList)resultList;
+        char[] chars = str.toCharArray();
+        ArrayList<String> results = new ArrayList<>();
+        caculate(chars,results,0);
+        return results;
     }
-
-    private void fun(char[] ch,List<String> list,int i){
-        //这是递归的终止条件，就是i下标已经移到char数组的末尾的时候，考虑添加这一组字符串进入结果集中
-        if(i == ch.length-1){
-            //判断一下是否重复
-            if(!list.contains(new String(ch))){
-                list.add(new String(ch));
-                return;
-            }
-        }else{
-            //回溯，逐个交换遍历，交换完成拿到字符串之后再将交换的位子还原
-            for(int j=i;j<ch.length;j++){
-                swap(ch,i,j);
-                fun(ch,list,i+1);
-                swap(ch,i,j);
-            }
-        }
-    }
-
 
     /**
-     * 交换数组的两个下标的元素
-     * @param str
+     * 计算结果，回溯法
+     *
+     *
+     * @param chars
+     * @param results
+     * @param i
+     */
+    private void caculate(char[] chars,ArrayList<String> results,int i){
+        //终止条件，i下标到了最后一个字符，单轮结束跳出递归
+        if(i == chars.length-1){
+            String result = new String(chars);
+            if(!results.contains(result)){
+                results.add(result);
+            }
+            return;
+        }
+        for (int j = i; j < chars.length; j++) {
+            //交换顺序遍历
+            swap(chars,i,j);
+            //i+1递归的关键，表示着交换的状态逐层下推
+            caculate(chars,results,i+1);
+            //再将顺序交换回来
+            swap(chars,i,j);
+        }
+    }
+
+    /**
+     * 数组下标数据交换，仅交换下标不同，并且对应的元素不同的情况
+     *
+     * @param chars
      * @param i
      * @param j
      */
-    private void swap(char[] str, int i, int j) {
-        if (i != j) {
-            char t = str[i];
-            str[i] = str[j];
-            str[j] = t;
+    private void swap(char[] chars,int i,int j){
+        if(i!=j && chars[i] != chars[j]){
+            char temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
         }
     }
 
+
+
+
     public static void main(String[] args) {
         CaseNC121 caseNC121 = new CaseNC121();
-        ArrayList<String> abc = caseNC121.Permutation("abc");
+        ArrayList<String> abc = caseNC121.Permutation("abcdefg");
         System.out.println(abc.toString());
 
     }
