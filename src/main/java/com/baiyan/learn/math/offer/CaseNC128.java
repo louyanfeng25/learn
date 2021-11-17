@@ -35,7 +35,7 @@ public class CaseNC128 {
         int left = 0;
         int right = arr.length-1;
         int min = Math.min(arr[left],arr[right]);
-        int area = 0;
+        long area = 0;
         while (left<right){
             if(arr[left]<arr[right]){
                 left ++;
