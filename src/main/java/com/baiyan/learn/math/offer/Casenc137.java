@@ -1,7 +1,6 @@
 package com.baiyan.learn.math.offer;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 /**
