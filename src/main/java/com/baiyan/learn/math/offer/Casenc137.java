@@ -72,20 +72,26 @@ public class Casenc137 {
             }
         }
 
-        //将剩余计算计算完
+        //已经将所有带括号的都计算完成，将中间剩余的结果计算完成计算完
         while(!op_stack.isEmpty()){
             cal(op_stack, num_stack);
         }
         return num_stack.peek();
     }
 
+    /**
+     * 根据运算符进行计算，注意栈中先拿出来的数字是在运算符之后的数字
+     *
+     * @param op
+     * @param num
+     */
     public void cal (Stack<Character> op, Stack<Integer> num){
-        if(op.isEmpty() || num.isEmpty() || num.size() < 2)
+        if(op.isEmpty() || num.isEmpty() || num.size() < 2){
             return;
+        }
         int b = num.pop();
         int a = num.pop();
-        char oper = op.pop();
-        switch (oper){
+        switch (op.pop()){
             case '+':
                 num.push(a + b);
                 break;
@@ -94,6 +100,8 @@ public class Casenc137 {
                 break;
             case '*':
                 num.push(a * b);
+                break;
+            default:
                 break;
         }
     }
