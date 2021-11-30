@@ -12,6 +12,17 @@ package com.baiyan.learn.math.offer;
  */
 public class CaseNC86 {
 
+    /**
+     * 右上角开始
+     *
+     * 值比X小则行+1，值比X大，则列-1
+     *
+     * @param mat
+     * @param n
+     * @param m
+     * @param x
+     * @return
+     */
     public int[] findElement(int[][] mat, int n, int m, int x) {
         int maxN = n;
         n = 0;
