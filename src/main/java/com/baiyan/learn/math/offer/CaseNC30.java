@@ -1,6 +1,7 @@
 package com.baiyan.learn.math.offer;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 /**
  * NC30 缺失的第一个正整数
@@ -46,6 +47,22 @@ public class CaseNC30 {
             return 1;
         }
     }
+
+
+    public int minNumberDisappeared1 (int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            set.add(nums[i]);
+        }
+        int j = 1;
+        while (set.contains(j)){
+            j++;
+        }
+        return j;
+    }
+
+
+
 
 
     public static void main(String[] args) {
