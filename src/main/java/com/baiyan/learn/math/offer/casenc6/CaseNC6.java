@@ -13,6 +13,11 @@ package com.baiyan.learn.math.offer.casenc6;
 public class CaseNC6 {
     int maxValue = Integer.MIN_VALUE;
 
+    /**
+     * 从每个节点出发，分别计算节点两边的值与当前值的和组合关系的最大值，取出其中一个节点出发的最大值
+     * @param root
+     * @return
+     */
     public int maxPathSum (TreeNode root) {
         traverseTree(root);
         return maxValue;
