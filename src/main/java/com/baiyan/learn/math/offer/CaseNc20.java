@@ -19,7 +19,7 @@ public class CaseNc20 {
     /**
      * 思路
      * 通过插入小数据点的方式进行递归，当待插入的小数点个数为0时
-     * 按照.进行切割字符串，校验每个ip段不大于255，且每个段的开始字符不可以为0
+     * 按照.进行切割字符串，校验每个ip段不大于255，且每个段大于9时，开始字符不可以为0
      * 特别需要注意：有可能截取后最有一个段为空，所以需要校验切割后的字符串是不是个数为4，例如885->8.8.5.
      *
      *
@@ -50,8 +50,8 @@ public class CaseNc20 {
                 return;
             }
             for (String string : strings) {
-                //ip段每个字符串都不能以0开头，且ip段数字不能大于255
-                if (string.length() > 0 && string.charAt(0) == '0' || Integer.valueOf(string) > 255) {
+                //ip段大于9时，每个字符串都不能以0开头，且ip段数字不能大于255
+                if (string.length() > 1 && string.charAt(0) == '0' || Integer.valueOf(string) > 255) {
                     return;
                 }
             }
