@@ -6,11 +6,11 @@ import java.util.Map;
 
 /**
  * LRU缓存设计
- *
+ * <p>
  * 哈希+双向链表
  *
  * <href>
- *     https://leetcode-cn.com/problems/lru-cache/
+ * https://leetcode-cn.com/problems/lru-cache/
  * </href>
  *
  * @author baiyan
@@ -23,8 +23,14 @@ public class LRU {
         int value;
         DLinkedNode prev;
         DLinkedNode next;
-        public DLinkedNode() {}
-        public DLinkedNode(int _key, int _value) {key = _key; value = _value;}
+
+        public DLinkedNode() {
+        }
+
+        public DLinkedNode(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
     }
 
     private Map<Integer, DLinkedNode> cache = new HashMap<Integer, DLinkedNode>();
@@ -69,8 +75,7 @@ public class LRU {
                 cache.remove(tail.key);
                 --size;
             }
-        }
-        else {
+        } else {
             // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
             node.value = value;
             moveToHead(node);
