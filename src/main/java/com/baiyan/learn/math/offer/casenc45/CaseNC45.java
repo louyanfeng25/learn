@@ -2,6 +2,8 @@ package com.baiyan.learn.math.offer.casenc45;
 
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * 树的前中后序遍历
@@ -13,17 +15,12 @@ import java.util.ArrayList;
  */
 public class CaseNC45 {
 
-    //先序遍历存储数组
-    public ArrayList<Integer> first = new ArrayList<>();
-    //中序遍历存储数组
-    public ArrayList<Integer> middle = new ArrayList<>();
-    //后续遍历存储数组
-    public ArrayList<Integer> then = new ArrayList<>();
-    /**
-     *
-     * @param root TreeNode类 the root of binary tree
-     * @return int整型二维数组
-     */
+    private List<Integer> first = new ArrayList<>();
+
+    private List<Integer> middle = new ArrayList<>();
+
+    private List<Integer> then = new ArrayList<>();
+
     public int[][] threeOrders (TreeNode root) {
         // write code here
         //关键点
@@ -41,46 +38,37 @@ public class CaseNC45 {
 
     }
 
-    //ArrayList 转 int[]
-    public int[] toIntArray(ArrayList<Integer> list){
-        if(list==null||list.size()<1){
+    private int[] toIntArray(List<Integer> array){
+        if(Objects.isNull(array) || array.size()==0){
             return new int[0];
         }
-        int[] result=new int[list.size()];
-        for(int i=0;i<list.size();i++){
-            result[i]=list.get(i);
+        int[] ints = new int[array.size()];
+        for (int i = 0; i < array.size(); i++) {
+            ints[i] = array.get(i);
         }
-        return result;
+        return ints;
     }
 
-    //先序遍历
-    public void firstOrder(TreeNode root){
-        //跳出条件
-        if(root==null){
+    private void firstOrder(TreeNode root){
+        if(Objects.isNull(root)){
             return;
         }
         first.add(root.val);
         firstOrder(root.left);
         firstOrder(root.right);
-
     }
 
-    //中序遍历
-    public void middleOrder(TreeNode root){
-        //跳出条件
-        if(root==null){
+    private void middleOrder(TreeNode root){
+        if(Objects.isNull(root)){
             return;
         }
         middleOrder(root.left);
         middle.add(root.val);
         middleOrder(root.right);
-
     }
 
-    //后序遍历
-    public void thenOrder(TreeNode root){
-        //跳出条件
-        if(root==null){
+    private void thenOrder(TreeNode root){
+        if(Objects.isNull(root)){
             return;
         }
         thenOrder(root.left);
