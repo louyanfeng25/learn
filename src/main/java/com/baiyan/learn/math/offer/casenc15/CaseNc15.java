@@ -18,23 +18,27 @@ public class CaseNc15 {
             return new ArrayList<>();
         }
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+
         Queue<TreeNode> queue = new LinkedList<>();
+
         queue.offer(root);
+
         while (!queue.isEmpty()){
             int size = queue.size();
-            ArrayList<Integer> tempList = new ArrayList<>();
+            ArrayList<Integer> list = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
-                tempList.add(poll.val);
+                list.add(poll.val);
                 if(poll.left!=null){
-                    queue.add(poll.left);
+                    queue.offer(poll.left);
                 }
-                if(poll.right!=null){
-                    queue.add(poll.right);
+                if(poll.right !=null){
+                    queue.offer(poll.right);
                 }
             }
-            result.add(tempList);
+            result.add(list);
         }
+
         return result;
     }
 
