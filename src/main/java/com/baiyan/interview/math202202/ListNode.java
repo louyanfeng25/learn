@@ -1,8 +1,8 @@
-package com.baiyan.learn.math.offer.casenc40;
+package com.baiyan.interview.math202202;
 
 /**
  * @author baiyan
- * @time 2021/6/7 17:21
+ * @date 2022-02-23
  */
 public class ListNode {
     int val;
