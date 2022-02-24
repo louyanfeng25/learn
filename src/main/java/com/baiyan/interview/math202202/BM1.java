@@ -8,7 +8,7 @@ package com.baiyan.interview.math202202;
  */
 public class BM1 {
 
-    public ListNode ReverseList(ListNode head) {
+    public static ListNode ReverseList(ListNode head) {
         ListNode pre = null;
         ListNode next = null;
         while (head!=null){
