@@ -1,20 +1,12 @@
-package com.baiyan.learn.math.offer.casenc4;
-
+package com.baiyan.interview.math202202;
 
 /**
- * 判断链表中是否有环
- *
- * 思路1：快慢指针
- * 思路2：map记录走过的节点
- *
- * <href>
- *     https://leetcode-cn.com/problems/lru-cache/
- * </href>
+ * BM6 判断链表中是否有环
  *
  * @author baiyan
- * @date 2021/11/01
+ * @date 2022-02-24
  */
-public class CaseNC4 {
+public class BM6 {
 
     public boolean hasCycle(ListNode head) {
         ListNode fast = head;
@@ -22,7 +14,7 @@ public class CaseNC4 {
         while (fast!=null && fast.next!=null){
             fast = fast.next.next;
             slow = slow.next;
-            if(slow ==fast){
+            if(fast==slow){
                 return true;
             }
         }
