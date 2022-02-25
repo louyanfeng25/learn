@@ -1,4 +1,4 @@
-package com.baiyan.interview.math202202;
+package com.baiyan.interview.math202202.node;
 
 /**
  * BM11 两个链表生成相加链表

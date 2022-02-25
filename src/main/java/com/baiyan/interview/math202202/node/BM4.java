@@ -1,4 +1,4 @@
-package com.baiyan.interview.math202202;
+package com.baiyan.interview.math202202.node;
 
 /**
  * BM4 合并两个排序的链表

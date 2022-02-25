@@ -1,4 +1,4 @@
-package com.baiyan.interview.math202202;
+package com.baiyan.interview.math202202.node;
 
 /**
  * BM8 链表中倒数最后k个结点

@@ -1,4 +1,4 @@
-package com.baiyan.interview.math202202;
+package com.baiyan.interview.math202202.node;
 
 /**
  * BM9 删除链表的倒数第n个节点

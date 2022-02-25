@@ -1,4 +1,4 @@
-package com.baiyan.interview.math202202;
+package com.baiyan.interview.math202202.node;
 
 /**
  * BM3 链表中的节点每k个一组翻转
