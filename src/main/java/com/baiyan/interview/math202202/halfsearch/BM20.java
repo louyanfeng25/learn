@@ -15,6 +15,14 @@ public class BM20 {
         return (int)(count%1000000007);
     }
 
+    /**
+     * 二分法拆分数组
+     *
+     * @param array
+     * @param left
+     * @param right
+     * @return
+     */
     private int[] process(int [] array,int left, int right){
         if(left==right){
             return new int[]{array[left]};
@@ -25,6 +33,13 @@ public class BM20 {
         return merge(leftArray,rightArray);
     }
 
+    /**
+     * 从小到大合并数组
+     *
+     * @param leftArray
+     * @param rightArray
+     * @return
+     */
     private int[] merge(int [] leftArray,int [] rightArray){
         int[] mergeArray = new int[leftArray.length+rightArray.length];
         int cur = 0;
