@@ -62,11 +62,4 @@ public class BM20 {
         return mergeArray;
     }
 
-    public static void main(String[] args) {
-        BM20 bm20 = new BM20();
-        int i = bm20.InversePairs(new int[]{1, 2, 3, 4, 5, 6, 7, 0});
-        System.out.println(i);
-    }
-
-
 }
