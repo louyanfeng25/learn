@@ -1,4 +1,4 @@
-package com.baiyan.learn.math.offer.casenc15;
+package com.baiyan.interview.math202202.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,12 +6,12 @@ import java.util.Objects;
 import java.util.Queue;
 
 /**
- * NC15 求二叉树的层序遍历
+ * BM26 求二叉树的层序遍历
  *
  * @author baiyan
- * @date 2021/11/01
+ * @date 2022-02-28
  */
-public class CaseNc15 {
+public class BM26 {
 
     public static ArrayList<ArrayList<Integer>> levelOrder (TreeNode root) {
         if(Objects.isNull(root)){
@@ -42,17 +42,4 @@ public class CaseNc15 {
         return result;
     }
 
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        TreeNode root1 = new TreeNode(9);
-        TreeNode root2 = new TreeNode(20);
-        TreeNode root3 = new TreeNode(15);
-        TreeNode root4 = new TreeNode(7);
-        root.left = root1;
-        root.right = root2;
-        root2.left = root3;
-        root2.right = root4;
-        ArrayList<ArrayList<Integer>> arrayLists = CaseNc15.levelOrder(root);
-        System.out.println(arrayLists);
-    }
 }
