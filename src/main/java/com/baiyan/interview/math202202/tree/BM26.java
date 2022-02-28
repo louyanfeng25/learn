@@ -8,11 +8,18 @@ import java.util.Queue;
 /**
  * BM26 求二叉树的层序遍历
  *
+ *
  * @author baiyan
  * @date 2022-02-28
  */
 public class BM26 {
 
+    /**
+     * 队列思路
+     *
+     * @param root
+     * @return
+     */
     public static ArrayList<ArrayList<Integer>> levelOrder (TreeNode root) {
         if(Objects.isNull(root)){
             return new ArrayList<>();
