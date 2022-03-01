@@ -17,36 +17,11 @@ import java.util.stream.Stream;
  */
 public class CaseNc60 {
 
-    long pre = Long.MIN_VALUE;
-
     public boolean[] judgeIt (TreeNode root) {
         if(root==null){
             return new boolean[]{true,true};
         }
-        return new boolean[]{isSearch(root),isAll(root)};
-    }
-
-    /**
-     * 是否为二叉搜索树
-     *
-     * 判断一棵二叉树是否为搜索二叉树，只要改写一个二叉树中序遍历，在遍历的过程中看节点值是否都是递增的即可。
-     *
-     * @param root
-     * @return
-     */
-    public boolean isSearch(TreeNode root){
-        //节点为空则为true
-       if(root==null){
-           return true;
-       }
-       boolean leftResult = isSearch(root.left);
-       //需要递增
-       if(root.val <= pre){
-           return false;
-       }
-       pre = root.val;
-       boolean rightResult = isSearch(root.right);
-       return leftResult && rightResult;
+        return new boolean[]{isAll(root)};
     }
 
     /**
