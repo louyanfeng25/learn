@@ -27,7 +27,7 @@ public class BM46 {
      * @param left
      * @param right
      */
-    private void quickSort(int[] arr, int left, int right) {
+    public void quickSort(int[] arr, int left, int right) {
         if(left>=right){
             return;
         }
