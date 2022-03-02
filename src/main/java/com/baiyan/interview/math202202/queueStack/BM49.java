@@ -1,19 +1,15 @@
-package com.baiyan.learn.math.offer;
+package com.baiyan.interview.math202202.queueStack;
 
 import java.util.HashMap;
 import java.util.Stack;
 
 /**
- * NC137 表达式求值
- *
- * <href>
- * https://www.nowcoder.com/practice/c215ba61c8b1443b996351df929dc4d4?tpId=117&&tqId=37849&rp=1&ru=/activity/oj&qru=/ta/job-code-high/question-ranking
- * </href>
+ * BM49 表达式求值
  *
  * @author baiyan
- * @time 2021/11/19
+ * @time 2022/03/02
  */
-public class Casenc137 {
+public class BM49 {
 
     public int solve(String s) {
         Stack<Integer> num_stack = new Stack<>();
@@ -99,9 +95,9 @@ public class Casenc137 {
 
 
     public static void main(String[] args) {
-        Casenc137 casenc137 = new Casenc137();
+        BM49 BM49 = new BM49();
         //50
-        int solve = casenc137.solve("3*(1+2*(3+4))+5");
+        int solve = BM49.solve("3*(1+2*(3+4))+5");
         System.out.println(solve);
     }
 }
