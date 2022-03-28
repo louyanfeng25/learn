@@ -59,32 +59,29 @@ public class Case3 {
      * @return
      */
     public int lengthOfLongestSubstring(String s) {
-        if(Objects.isNull(s)){
+        if(s==null){
             return 0;
         }
-        if(s.length() <= 1){
+        if(s.length()<=1){
             return s.length();
         }
         int left = 0;
-        int maxLength = 0;
-        Map<Character,Integer> map = new HashMap<>(8);
-        for (int i = 0; i < s.length(); i++) {
-            if(map.containsKey(s.charAt(i))){
-                //左指针滑动至重复key值的下一个键
-                left = Math.max(left,map.get(s.charAt(i))+1);
+        int maxLen = 0;
+        HashMap<Character, Integer> map = new HashMap<>(8);
+        for (int right = 0; right < s.length(); right++) {
+            if(map.containsKey(s.charAt(right))){
+                left = Math.max(left,map.get(s.charAt(right))+1);
             }
-            //两种情况，
-            // 不重复，则添加至map增加未重复的key
-            // 重复，则对同样的key值进行更新只指针的value值
-            map.put(s.charAt(i),i);
-            maxLength = Math.max(maxLength,i-left+1);
+            map.put(s.charAt(right),right);
+            maxLen = Math.max(maxLen,right-left+1);
         }
-        return maxLength;
+        return maxLen;
     }
 
     public static void main(String[] args) {
         Case3 case3 = new Case3();
         System.out.println(case3.lengthOfLongestSubstring1("abcabcdbb"));
-        System.out.println(case3.lengthOfLongestSubstring("abcabcdbb"));
+        System.out.println(case3.lengthOfLongestSubstring("bbbbb"));
+        System.out.println(case3.lengthOfLongestSubstring("pwwkew"));
     }
 }
