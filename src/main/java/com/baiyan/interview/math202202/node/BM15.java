@@ -19,7 +19,6 @@ public class BM15 {
                cur=cur.next;
                pre.next = cur;
            }else {
-               pre.next = cur;
                pre = cur;
                cur = cur.next;
            }
